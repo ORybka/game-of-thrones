@@ -30,10 +30,15 @@ li {
 }
 
 $colors: (
-  green: rgba(90, 143, 130, 0.8),
-  yellow: rgba(247, 243, 223, 0.8),
-  bg-grey: rgb(226, 225, 225),
-  border-grey: rgba(153, 153, 153, 0.2),
+  tyrell: rgba(75, 179, 153, 0.8),
+  baratheon: rgba(247, 243, 223, 0.8),
+  arryn: rgb(226, 225, 225),
+  tully: rgba(153, 153, 153, 0.2),
+  stark: rgba(85, 58, 24, 0.8),
+  lannister: rgba(145, 163, 65, 0.8),
+  targaryen: rgba(221, 81, 81, 0.8),
+  martell: rgba(189, 137, 42, 0.8),
+  greyjoy: rgba(126, 100, 16, 0.8),
 );
 
 @function color($colors-name) {
@@ -48,6 +53,30 @@ $colors: (
   font-style: normal;
 }
 
+@keyframes left {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes right {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 html {
   font-family: "Gothic A1", sans-serif;
   font-size: 16px;
@@ -55,11 +84,11 @@ html {
   background-position: center;
 }
 
-@media screen and (max-width: 500px) {
-  html {
-    font-size: 12px;
-  }
-}
+// @media screen and (max-width: 500px) {
+//   html {
+//     font-size: 12px;
+//   }
+// }
 
 .container {
   height: 100vh;
@@ -80,24 +109,14 @@ html {
     font-size: 2rem;
     padding: 1rem;
     letter-spacing: 0.7rem;
-    background-color: color(yellow);
+    background-color: color(baratheon);
     border-radius: 0.8rem;
   }
 }
 
 .content-container {
   display: grid;
-  grid-template-columns: 20% 80%;
-
-  .content {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    position: relative;
-    background-color: color(green);
-    width: 100%;
-    height: 100%;
-  }
+  grid-template-columns: 25% 75%;
 }
 
 .navbar {
@@ -111,17 +130,96 @@ html {
 }
 
 .menu-item {
-  height: 2.7rem;
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  width: 11.7rem;
   margin: 0.7rem auto;
-  padding-top: 0.8rem;
-  text-align: center;
-  font-weight: bold;
-  background-color: color(yellow);
+  background-color: color(baratheon);
   border-radius: 0.8rem;
 
+  .menu-item-img {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 0.5rem 0 0.7rem;
+    transition: all 0.8s ease-in;
+  }
+
+  span {
+    position: fixed;
+    margin-left: 3rem;
+    font-weight: bold;
+    animation: right 1s forwards;
+  }
+
+  &:hover > .menu-item-img {
+    position: absolute;
+    margin-left: 9rem;
+    transition: all 0.5s ease-in;
+  }
+
+  &:hover > span {
+    // display: none;
+    animation: left 0.1s forwards;
+  }
+
   &:hover {
-    background-color: color(green);
-    color: white;
+    background-color: color(tyrell);
+    transition: 0.5s ease-in;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  position: relative;
+  background-color: color(stark);
+  width: 100%;
+  height: 100%;
+  padding: 1rem 2rem;
+}
+
+.content-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  height: 100%;
+
+  .shield {
+    height: 13rem;
+    width: auto;
+    margin: 2rem 0 1rem;
+    border: 1px solid color();
+  }
+
+  .slogan {
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    padding: 0 1rem;
+    text-align: center;
+  }
+}
+
+.content-img-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  .content-img {
+    display: flex;
+    // align-self: end;
+    height: 8rem;
+    width: 8rem;
+    margin: 0.5rem 0;
+    background-color: color(baratheon);
+    border-radius: 50%;
+    background-image: url("/assets/members/member-stark-1.jpg");
+    background-size: cover;
   }
 }
 
@@ -131,12 +229,4 @@ footer {
   h3 {
     margin-top: 0.7rem;
   }
-}
-
-.img {
-  height: 10rem;
-  width: 10rem;
-  background-color: color(yellow);
-  border-radius: 2rem;
-  background-size: 100%;
 }
