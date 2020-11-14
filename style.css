@@ -1,0 +1,152 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+}
+
+li {
+  list-style-type: none;
+}
+
+@font-face {
+  font-family: "game_of_thronesregular";
+  src: url("./assets/fonts/game-of-thrones-webfont.woff2") format("woff2"), url("./assets/fonts/game-of-thrones-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-family: "Gothic A1", sans-serif;
+  font-size: 16px;
+  background-image: url(/assets/westeros_map.jpg);
+  background-position: center;
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+.container {
+  height: 100vh;
+  width: 80%;
+  max-width: 82rem;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 15% 80% 5%;
+      grid-template-rows: 15% 80% 5%;
+}
+
+.header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header-container h1 {
+  font-family: "game_of_thronesregular";
+  font-size: 2rem;
+  padding: 1rem;
+  letter-spacing: 0.7rem;
+  background-color: rgba(247, 243, 223, 0.8);
+  border-radius: 0.8rem;
+}
+
+.content-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% 80%;
+      grid-template-columns: 20% 80%;
+}
+
+.content-container .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: relative;
+  background-color: rgba(90, 143, 130, 0.8);
+  width: 100%;
+  height: 100%;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar .menu-container {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.menu-item {
+  height: 2.7rem;
+  margin: 0.7rem auto;
+  padding-top: 0.8rem;
+  text-align: center;
+  font-weight: bold;
+  background-color: rgba(247, 243, 223, 0.8);
+  border-radius: 0.8rem;
+}
+
+.menu-item:hover {
+  background-color: rgba(90, 143, 130, 0.8);
+  color: white;
+}
+
+footer {
+  font-family: "game_of_thronesregular";
+}
+
+footer h3 {
+  margin-top: 0.7rem;
+}
+
+.img {
+  height: 10rem;
+  width: 10rem;
+  background-color: rgba(247, 243, 223, 0.8);
+  border-radius: 2rem;
+  background-size: 100%;
+}
+/*# sourceMappingURL=style.css.map */
