@@ -1,3 +1,15 @@
+:root {
+  --tyrell: rgba(75, 179, 153, 0.8);
+  --baratheon: rgba(247, 243, 223, 0.8);
+  --arryn: rgba(226, 225, 225, 0.8);
+  --tully: rgba(153, 153, 153, 0.8);
+  --stark: rgba(85, 58, 24, 0.8);
+  --lannister: rgba(145, 163, 65, 0.8);
+  --targaryen: rgba(196, 29, 29, 0.8);
+  --martell: rgba(189, 137, 42, 0.8);
+  --greyjoy: rgba(126, 100, 16, 0.8);
+}
+
 *,
 *::before,
 *::after {
@@ -29,22 +41,6 @@ li {
   list-style-type: none;
 }
 
-$colors: (
-  tyrell: rgba(75, 179, 153, 0.8),
-  baratheon: rgba(247, 243, 223, 0.8),
-  arryn: rgb(226, 225, 225),
-  tully: rgba(153, 153, 153, 0.2),
-  stark: rgba(85, 58, 24, 0.8),
-  lannister: rgba(145, 163, 65, 0.8),
-  targaryen: rgba(221, 81, 81, 0.8),
-  martell: rgba(189, 137, 42, 0.8),
-  greyjoy: rgba(126, 100, 16, 0.8),
-);
-
-@function color($colors-name) {
-  @return map-get($colors, $colors-name);
-}
-
 @font-face {
   font-family: "game_of_thronesregular";
   src: url("./assets/fonts/game-of-thrones-webfont.woff2") format("woff2"),
@@ -64,9 +60,6 @@ $colors: (
 
 @keyframes right {
   0% {
-    opacity: 0;
-  }
-  50% {
     opacity: 0;
   }
   75% {
@@ -109,7 +102,7 @@ html {
     font-size: 2rem;
     padding: 1rem;
     letter-spacing: 0.7rem;
-    background-color: color(baratheon);
+    background-color: var(--baratheon);
     border-radius: 0.8rem;
   }
 }
@@ -135,7 +128,7 @@ html {
   height: 3rem;
   width: 11.7rem;
   margin: 0.7rem auto;
-  background-color: color(baratheon);
+  background-color: var(--baratheon);
   border-radius: 0.8rem;
 
   .menu-item-img {
@@ -159,12 +152,11 @@ html {
   }
 
   &:hover > span {
-    // display: none;
     animation: left 0.1s forwards;
   }
 
   &:hover {
-    background-color: color(tyrell);
+    background-color: var(--stark);
     transition: 0.5s ease-in;
   }
 }
@@ -175,7 +167,7 @@ html {
   align-items: flex-start;
   justify-content: space-around;
   position: relative;
-  background-color: color(stark);
+  background-color: var(--stark);
   width: 100%;
   height: 100%;
   padding: 1rem 2rem;
@@ -188,38 +180,50 @@ html {
   justify-content: start;
   height: 100%;
 
+  .house {
+    font-family: "game_of_thronesregular";
+    margin-bottom: 1rem;
+    color: white;
+    letter-spacing: 0.5rem;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+
   .shield {
-    height: 13rem;
+    height: 10rem;
     width: auto;
-    margin: 2rem 0 1rem;
-    border: 1px solid color();
+    margin: 0 0 1rem;
   }
 
   .slogan {
     margin-bottom: 1rem;
+    color: white;
+    font-size: 1.5rem;
   }
 
   .description {
     padding: 0 1rem;
     text-align: center;
+    color: white;
+    font-weight: bold;
   }
 }
 
 .content-img-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 100%;
 
   .content-img {
     display: flex;
-    // align-self: end;
     height: 8rem;
     width: 8rem;
     margin: 0.5rem 0;
-    background-color: color(baratheon);
+    background-color: var(--stark);
     border-radius: 50%;
     background-image: url("/assets/members/member-stark-1.jpg");
     background-size: cover;
+    border: 0.1rem solid black;
   }
 }
 
