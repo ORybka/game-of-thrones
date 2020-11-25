@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   createList();
   createElements(houses[0]);
+  createImages(houses[0]);
 })
 
 const houses = [
@@ -81,34 +82,51 @@ const houses = [
 
 // const button = document.querySelector('.menu-item');
 let button;
+let icons;
 const content = document.querySelector('.content');
 const house = document.querySelector('.house');
 const shield = document.querySelector('.shield');
 const slogan = document.querySelector('.slogan');
 const description = document.querySelector('.description');
-const background = document.querySelector('.content');
+const background = document.querySelector('.content-container');
 const menu = document.querySelector(".menu-container");
-
-
-function createElements(el) {
-    house.innerText = `house ${el.name}`;
-    shield.setAttribute('src', `/assets/shields/${el.name}.png`);
-    slogan.innerText = `${el.slogan}`;
-    description.innerText = `${el.description}`;
-    background.style.backgroundColor = `var(--${el.name})`;
-}
-
+const images = document.querySelector(".content-img-container");
+const fragment = document.createDocumentFragment();
 
 function createList() {
-  houses.forEach(el => {
-  button = document.createElement('li');
-  button.className = ("menu-item");
+  houses.forEach(item => {
+    button = document.createElement('li');
+    button.className = ("menu-item");
     button.innerHTML = `
-    <img class="menu-item-img" src="/assets/shields/${el.name}.png">
-    <span>House ${el.name}</span>`;
+    <img class="menu-item-img" src="/assets/shields/${item.name}.png"><span>House ${item.name}</span>`;
     menu.appendChild(button);
     button.addEventListener('click', () => {
-      createElements(el);
+        createElements(item);
+        createImages(item);
+      })
     })
-  })
 }
+
+function createElements(item) {
+  house.innerText = `house ${item.name}`;
+  shield.setAttribute('src', `/assets/shields/${item.name}.png`);
+  slogan.innerText = `${item.slogan}`;
+  description.innerText = `${item.description}`;
+  background.style.backgroundColor = `var(--${item.name})`;
+}
+
+function createImages(item) {
+  const number = 4;
+  
+  if (images.firstElementChild === null) {
+    for (let i = 1; i <= number; i++) {
+      image = document.createElement('div');
+      image.className = ("content-img");
+      images.appendChild(image);
+      image.style.backgroundImage = `url("/assets/members/member-${item.name}-${i}.jpg")`;
+    }
+  } 
+
+
+}
+

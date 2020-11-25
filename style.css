@@ -1,13 +1,15 @@
 :root {
-  --tyrell: rgba(75, 179, 153, 0.8);
-  --baratheon: rgba(247, 243, 223, 0.8);
-  --arryn: rgba(226, 225, 225, 0.8);
-  --tully: rgba(153, 153, 153, 0.8);
-  --stark: rgba(85, 58, 24, 0.8);
-  --lannister: rgba(145, 163, 65, 0.8);
-  --targaryen: rgba(196, 29, 29, 0.8);
-  --martell: rgba(189, 137, 42, 0.8);
-  --greyjoy: rgba(126, 100, 16, 0.8);
+  --tyrell: rgba(85, 160, 67, 0.8);
+  --baratheon: rgba(158, 142, 83, 0.8);
+  --arryn: rgba(125, 146, 139, 0.8);
+  --tully: rgba(82, 82, 94, 0.8);
+  --stark: rgba(147, 137, 112, 0.8);
+  --lannister: rgba(186, 168, 58, 0.8);
+  --targaryen: rgba(170, 43, 34, 0.8);
+  --martell: rgba(206, 120, 37, 0.8);
+  --greyjoy: rgba(89, 72, 28, 0.8);
+  --background: rgba(83, 69, 43, 0.9);
+  --text: rgb(0, 0, 0);
 }
 
 *,
@@ -125,8 +127,9 @@ html {
   font-family: "game_of_thronesregular";
   font-size: 2rem;
   padding: 1rem;
+  color: var(--text);
   letter-spacing: 0.7rem;
-  background-color: var(--baratheon);
+  background-color: var(--background);
   border-radius: 0.8rem;
 }
 
@@ -159,9 +162,12 @@ html {
       -ms-flex-align: center;
           align-items: center;
   height: 3rem;
-  width: 11.7rem;
+  width: 13rem;
   margin: 0.7rem auto;
-  background-color: var(--baratheon);
+  background-color: var(--background);
+  color: var(--text);
+  text-transform: uppercase;
+  font-size: 0.9rem;
   border-radius: 0.8rem;
 }
 
@@ -213,7 +219,6 @@ html {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   position: relative;
-  background-color: var(--stark);
   width: 100%;
   height: 100%;
   padding: 1rem 2rem;
@@ -234,12 +239,12 @@ html {
       -ms-flex-pack: start;
           justify-content: start;
   height: 100%;
+  color: var(--text);
 }
 
 .content-info .house {
   font-family: "game_of_thronesregular";
   margin-bottom: 1rem;
-  color: white;
   letter-spacing: 0.5rem;
   font-size: 1.5rem;
   margin-top: 1rem;
@@ -253,14 +258,12 @@ html {
 
 .content-info .slogan {
   margin-bottom: 1rem;
-  color: white;
   font-size: 1.5rem;
 }
 
 .content-info .description {
   padding: 0 1rem;
   text-align: center;
-  color: white;
   font-weight: bold;
 }
 
