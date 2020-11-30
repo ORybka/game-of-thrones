@@ -84,9 +84,9 @@ const houses = [
 let button;
 let icons;
 let image;
+let imageCollection = [];
 let previousId = 0;
 const number = 3;
-let imageCollection = [];
 const content = document.querySelector('.content');
 const house = document.querySelector('.house');
 const shield = document.querySelector('.shield');
@@ -115,7 +115,7 @@ function createElements(item) {
   house.innerText = `house ${item.name}`;
   shield.setAttribute('src', `/assets/shields/${item.name}.png`);
   slogan.innerText = `${item.slogan}`;
-  description.innerText = `${item.description}`;
+  description.innerHTML = `<span>${item.description}</span>`;
   background.style.backgroundColor = `var(--${item.name})`;
 }
 

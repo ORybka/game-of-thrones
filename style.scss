@@ -105,11 +105,13 @@ body {
 
 .container {
   position: absolute;
-  height: 100vh;
+  height: 120vh;
   width: 80%;
-  max-width: 82rem;
-  display: grid;
-  grid-template-rows: 15% 80% 5%;
+  max-width: 70rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .header-container {
@@ -131,6 +133,9 @@ body {
 .content-container {
   display: grid;
   grid-template-columns: 25% 75%;
+  border-radius: 0.5rem;
+  height: fit-content;
+  padding: 0 1rem 1rem;
 }
 
 .navbar {
@@ -163,7 +168,7 @@ body {
   }
 
   span {
-    position: fixed;
+    // position: fixed;
     margin-left: 3rem;
     font-weight: bold;
     animation: right 1s forwards;
@@ -211,6 +216,29 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     margin-top: 1rem;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 120%;
+      height: 0.2rem;
+      margin: 1rem -10% 0;
+      background-color: var(--text);
+    }
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    margin-top: 3rem;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    align-items: center;
+    margin: 0 0.5rem 1rem;
   }
 
   .shield {
@@ -223,12 +251,50 @@ body {
     margin-bottom: 1rem;
     font-size: 1.5rem;
     font-weight: bold;
+    text-align: center;
+    line-height: 1.7rem;
   }
 
   .description {
-    padding: 0 1rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 0.5rem;
+    padding: 0 2rem;
+    margin-top: -2rem;
     text-align: center;
     font-weight: bold;
+    height: 18rem;
+    line-height: 18rem;
+  }
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 18px;
+  }
+}
+
+.question {
+  font-size: 1.3rem;
+  margin: 2rem auto 1rem;
+  text-align: center;
+  font-weight: bold;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 120%;
+    height: 0.2rem;
+    margin: 0 -10% 0.5rem;
+    background-color: var(--text);
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 120%;
+    height: 0.2rem;
+    margin: 0.5rem -10% 0;
+    background-color: var(--text);
   }
 }
 
@@ -236,6 +302,8 @@ body {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 0.5rem;
 
   .content-img {
     display: flex;
@@ -259,8 +327,15 @@ body {
 
 footer {
   font-family: "game_of_thronesregular";
+  font-weight: bold;
+  margin: 0 15rem 1rem 0;
 
-  h3 {
-    margin-top: 0.7rem;
+  .footer-info {
+    height: 100%;
+    width: 200%;
+    padding: 1rem 0;
+    background-color: var(--background);
+    border-radius: 0.5rem;
+    text-align: center;
   }
 }
