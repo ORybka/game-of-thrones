@@ -97,7 +97,8 @@ const background = document.querySelector('.content-container');
 const menu = document.querySelector(".menu-container");
 const navbar = document.querySelector(".navbar");
 const images = document.querySelector(".content-img-container");
-const hiddenIcon = document.querySelector(".hidden-menu");
+const hiddenIcon = document.querySelector(".icon");
+const header = document.querySelector(".header-container");
 
 function createList() {
   houses.forEach(item => {
@@ -194,6 +195,7 @@ function showDead(el) {
 hiddenIcon.addEventListener("click", () => {
   navbar.classList.toggle("active");
   hiddenIcon.classList.toggle("active");
+  header.classList.toggle("active")
 });
 
 

@@ -149,8 +149,13 @@ body {
 
 @media (max-width: 992px) {
   .background-container .background-picture {
-    background-position: center;
-    background-image: url(/assets/westeros_map_992.jpg);
+    background-size: 110% 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .background-container .background-picture {
+    background-size: 120% 100%;
   }
 }
 
@@ -203,7 +208,7 @@ body {
   margin: 1rem auto;
 }
 
-.header-container .hidden-menu {
+.header-container .icon {
   display: none;
 }
 
@@ -309,21 +314,31 @@ body {
 @media (max-width: 600px) {
   .header-container {
     background-color: var(--background);
+    border-radius: 0.5rem;
     height: 10rem;
     margin-bottom: 1rem;
   }
   .header-container h1 {
     background-color: transparent;
   }
-  .header-container .hidden-menu {
-    display: block;
-  }
-  .header-container .hidden-menu .active {
-    margin-top: 20rem;
-  }
   .header-container .icon {
+    display: block;
     font-size: 3.5rem;
     margin-top: -2rem;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  .header-container .active {
+    -webkit-transform: rotate(0.5turn);
+            transform: rotate(0.5turn);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  .active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
   .navbar {
     position: absolute;
