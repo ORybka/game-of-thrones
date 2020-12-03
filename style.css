@@ -24,12 +24,7 @@
   padding: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1 {
   margin: 0;
   text-align: center;
 }
@@ -55,9 +50,6 @@ li {
   0% {
     opacity: 0;
   }
-  25% {
-    opacity: 0;
-  }
   40% {
     opacity: 0;
   }
@@ -71,9 +63,6 @@ li {
 
 @keyframes opacity {
   0% {
-    opacity: 0;
-  }
-  25% {
     opacity: 0;
   }
   40% {
@@ -131,11 +120,6 @@ body {
   html {
     font-size: 12px;
   }
-}
-
-.background-container {
-  width: 100%;
-  height: 100%;
 }
 
 .background-container .background-picture {
