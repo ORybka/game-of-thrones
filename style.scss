@@ -92,7 +92,7 @@ body {
   align-content: center;
 }
 
-@media screen and (max-width: 756px) {
+@media screen and (max-width: 600px) {
   html {
     font-size: 12px;
   }
@@ -132,8 +132,10 @@ body {
 
 .header-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 5;
 
   h1 {
     font-family: "game_of_thronesregular";
@@ -145,6 +147,10 @@ body {
     background-color: var(--background);
     border-radius: 0.8rem;
     margin: 1rem auto;
+  }
+
+  .hidden-menu {
+    display: none;
   }
 }
 
@@ -164,10 +170,6 @@ body {
     margin: 0 auto;
     width: 90%;
   }
-}
-
-.burger-menu {
-  display: none;
 }
 
 .menu-item {
@@ -235,20 +237,60 @@ body {
   }
 }
 
-@media (max-width: 756px) {
-  .burger-menu {
-    display: block;
-    position: relative;
-    // width: 30px;
-    // height: 20px;
+@media (max-width: 600px) {
+  .header-container {
+    background-color: var(--background);
+    height: 10rem;
+    margin-bottom: 1rem;
+
+    h1 {
+      background-color: transparent;
+    }
+
+    .hidden-menu {
+      display: block;
+    }
+
+    .hidden-menu .active {
+      margin-top: 20rem;
+    }
 
     .icon {
       font-size: 3.5rem;
+      margin-top: -2rem;
     }
   }
 
   .navbar {
-    display: none;
+    position: absolute;
+    top: -100%;
+    overflow: auto;
+
+    .menu-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+
+  .navbar.active {
+    position: relative;
+    left: -5%;
+    margin-top: -1rem;
+    width: 110%;
+    background-color: rgb(126, 110, 80);
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+
+  .menu-item {
+    background-color: transparent;
+    border: 1px solid #000;
+    width: 9.5rem;
+    height: 2.5rem;
+    margin: 0.3rem 0;
   }
 }
 
@@ -395,13 +437,14 @@ body {
   .col {
     padding-top: 4rem;
   }
+
+  .content-info .house::after {
+    width: 70%;
+    margin: 1rem auto 0;
+  }
 }
 
-@media (max-width: 756px) {
-  .container {
-    margin-left: 5%;
-  }
-
+@media (max-width: 600px) {
   .header-container {
     h1 {
       font-size: 1.5rem;

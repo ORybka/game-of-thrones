@@ -127,7 +127,7 @@ body {
       align-content: center;
 }
 
-@media screen and (max-width: 756px) {
+@media screen and (max-width: 600px) {
   html {
     font-size: 12px;
   }
@@ -178,12 +178,17 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  z-index: 5;
 }
 
 .header-container h1 {
@@ -196,6 +201,10 @@ body {
   background-color: var(--background);
   border-radius: 0.8rem;
   margin: 1rem auto;
+}
+
+.header-container .hidden-menu {
+  display: none;
 }
 
 .content-container {
@@ -222,10 +231,6 @@ body {
 .navbar .menu-container {
   margin: 0 auto;
   width: 90%;
-}
-
-.burger-menu {
-  display: none;
 }
 
 .menu-item {
@@ -301,16 +306,61 @@ body {
   }
 }
 
-@media (max-width: 756px) {
-  .burger-menu {
-    display: block;
-    position: relative;
+@media (max-width: 600px) {
+  .header-container {
+    background-color: var(--background);
+    height: 10rem;
+    margin-bottom: 1rem;
   }
-  .burger-menu .icon {
+  .header-container h1 {
+    background-color: transparent;
+  }
+  .header-container .hidden-menu {
+    display: block;
+  }
+  .header-container .hidden-menu .active {
+    margin-top: 20rem;
+  }
+  .header-container .icon {
     font-size: 3.5rem;
+    margin-top: -2rem;
   }
   .navbar {
-    display: none;
+    position: absolute;
+    top: -100%;
+    overflow: auto;
+  }
+  .navbar .menu-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .navbar.active {
+    position: relative;
+    left: -5%;
+    margin-top: -1rem;
+    width: 110%;
+    background-color: #7e6e50;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+  .menu-item {
+    background-color: transparent;
+    border: 1px solid #000;
+    width: 9.5rem;
+    height: 2.5rem;
+    margin: 0.3rem 0;
   }
 }
 
@@ -493,12 +543,13 @@ body {
   .col {
     padding-top: 4rem;
   }
+  .content-info .house::after {
+    width: 70%;
+    margin: 1rem auto 0;
+  }
 }
 
-@media (max-width: 756px) {
-  .container {
-    margin-left: 5%;
-  }
+@media (max-width: 600px) {
   .header-container h1 {
     font-size: 1.5rem;
   }

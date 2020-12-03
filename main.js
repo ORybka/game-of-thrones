@@ -97,7 +97,7 @@ const background = document.querySelector('.content-container');
 const menu = document.querySelector(".menu-container");
 const navbar = document.querySelector(".navbar");
 const images = document.querySelector(".content-img-container");
-const burgerIcon = document.querySelector(".burger-menu");
+const hiddenIcon = document.querySelector(".hidden-menu");
 
 function createList() {
   houses.forEach(item => {
@@ -191,10 +191,10 @@ function showDead(el) {
   }, 1450);
 }
 
-// burgerIcon.addEventListener("click", () => {
-//   navbar.classList.toggle("active");
-//   burgerIcon.classList.toggle("active");
-// });
+hiddenIcon.addEventListener("click", () => {
+  navbar.classList.toggle("active");
+  hiddenIcon.classList.toggle("active");
+});
 
 
 
