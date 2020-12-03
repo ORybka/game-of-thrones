@@ -53,12 +53,12 @@ li {
 
 @keyframes opacity {
   0% {
-    opacity: 1;
+    opacity: 0;
   }
   25% {
     opacity: 0;
   }
-  50% {
+  40% {
     opacity: 0;
   }
   75% {
@@ -114,13 +114,13 @@ body {
 
 .container {
   position: absolute;
-  height: 120vh;
+  max-height: 55rem;
   width: 80%;
   max-width: 70rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .header-container {
@@ -136,6 +136,7 @@ body {
     letter-spacing: 0.7rem;
     background-color: var(--background);
     border-radius: 0.8rem;
+    margin: 1rem auto;
   }
 }
 
@@ -144,7 +145,7 @@ body {
   grid-template-columns: 25% 75%;
   border-radius: 0.5rem;
   height: fit-content;
-  padding: 0 1rem 1rem;
+  padding: 0 1rem;
 }
 
 .navbar {
@@ -185,7 +186,7 @@ body {
   }
 
   &:hover {
-    background-color: var(--arryn);
+    background-color: #cabd9f;
     transition: all 0.5s ease-in;
   }
 
@@ -200,16 +201,12 @@ body {
   }
 
   &:focus {
-    background-color: var(--stark);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #cabd9f;
     transition: 0.5s ease-in;
     border: 0.2rem solid black;
     outline: none;
   }
-}
-
-.active {
-  background-color: var(--stark);
-  border: 0.3rem solid #000;
 }
 
 .content {
@@ -237,7 +234,7 @@ body {
     letter-spacing: 0.5rem;
     font-size: 1.5rem;
     font-weight: bold;
-    margin-top: 1rem;
+    margin: 1rem auto 0;
 
     &::after {
       content: "";
@@ -298,7 +295,7 @@ body {
 .question {
   width: 80%;
   font-size: 1.3rem;
-  margin: 2rem auto 1rem;
+  margin: 1rem auto 1rem;
   text-align: center;
   font-weight: bold;
 
@@ -351,7 +348,7 @@ body {
 footer {
   font-family: "game_of_thronesregular";
   font-weight: bold;
-  margin: 0 15rem 1rem 0;
+  margin: 0.5rem 15rem 1rem 0;
 
   .footer-info {
     height: 100%;

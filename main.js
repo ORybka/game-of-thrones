@@ -50,7 +50,7 @@ const houses = [
     id: 5,
     name: 'targaryen',
     slogan: '"Fire and Blood"',
-    description: 'House Targaryen of Dragonstone is a noble family of Valyrian descent who once ruled the Seven Kingdoms of Westeros. It eventually became the first royal house of the Seven Kingdoms, as House Targaryen of King\'s Landing. The only family of dragonlords who survived the Doom of Valyria, the Targaryens left the Valyrian Freehold twelve years before the Doom. They resided for more than a century at Dragonstone on the island of the same name, until Aegon the Conqueror and his sister-wives, Visenya and Rhaenys, began the first of the Wars of Conquest in 2 BC.',
+    description: 'House Targaryen of Dragonstone is a noble family of Valyrian descent who once ruled the Seven Kingdoms of Westeros. It eventually became the first royal house of the Seven Kingdoms, as House Targaryen of King\'s Landing. The only family of dragonlords who survived the Doom of Valyria, the Targaryens left the Valyrian Freehold twelve years before the Doom.',
     mapPosition: ['scale(1.3)', '-80%', '0'],
     dead: [1, 1, 1]
   },
@@ -101,7 +101,7 @@ function createList() {
   houses.forEach(item => {
     buttonLi = document.createElement('li');
     button = document.createElement('button');
-    button.className = (`menu-item ${item.name}`);
+    button.className = (`menu-item`);
     button.innerHTML = `
     <img class="menu-item-img" src="/assets/shields/${item.name}.png"><span>House ${item.name}</span>`;
     buttonLi.appendChild(button);
@@ -110,7 +110,6 @@ function createList() {
       createElements(item);
       createImages(item);
       animation(item);
-      // setActiveBtn(item);
     })
   })
 }
@@ -126,7 +125,6 @@ function createElements(item) {
 function setActiveBtn(item) {
   button.className = "active";
   console.log(item.name);
-  // if(item.name = item);
 }
 
 function createImages(item) {
