@@ -51,21 +51,39 @@ li {
   font-style: normal;
 }
 
-@-webkit-keyframes left {
+@-webkit-keyframes opacity {
   0% {
     opacity: 1;
   }
-  100% {
+  25% {
     opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
-@keyframes left {
+@keyframes opacity {
   0% {
     opacity: 1;
   }
-  100% {
+  25% {
     opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -205,6 +223,7 @@ body {
   text-transform: uppercase;
   font-size: 0.9rem;
   border-radius: 0.8rem;
+  border: none;
 }
 
 .menu-item .menu-item-img {
@@ -216,28 +235,42 @@ body {
 }
 
 .menu-item span {
-  margin-left: 3rem;
+  text-align: start;
+  margin-left: 0.5rem;
   font-weight: bold;
   -webkit-animation: right 1s forwards;
           animation: right 1s forwards;
 }
 
-.menu-item:hover > .menu-item-img {
-  position: absolute;
-  margin-left: 9rem;
+.menu-item:hover {
+  background-color: var(--arryn);
   -webkit-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;
 }
 
-.menu-item:hover > span {
-  -webkit-animation: left 0.1s forwards;
-          animation: left 0.1s forwards;
+.menu-item:focus > .menu-item-img {
+  position: absolute;
+  margin-left: 10rem;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
 }
 
-.menu-item:hover {
+.menu-item:focus > span {
+  -webkit-animation: opacity 1s forwards;
+          animation: opacity 1s forwards;
+}
+
+.menu-item:focus {
   background-color: var(--stark);
   -webkit-transition: 0.5s ease-in;
   transition: 0.5s ease-in;
+  border: 0.2rem solid black;
+  outline: none;
+}
+
+.active {
+  background-color: var(--stark);
+  border: 0.3rem solid #000;
 }
 
 .content {
@@ -351,6 +384,7 @@ body {
 }
 
 .question {
+  width: 80%;
   font-size: 1.3rem;
   margin: 2rem auto 1rem;
   text-align: center;
@@ -360,18 +394,18 @@ body {
 .question::before {
   content: "";
   display: block;
-  width: 120%;
+  width: 105%;
   height: 0.2rem;
-  margin: 0 -10% 0.5rem;
+  margin: 0 -2.5% 0.5rem;
   background-color: var(--text);
 }
 
 .question::after {
   content: "";
   display: block;
-  width: 120%;
+  width: 105%;
   height: 0.2rem;
-  margin: 0.5rem -10% 0;
+  margin: 0.5rem -2.5% 0;
   background-color: var(--text);
 }
 
@@ -421,5 +455,13 @@ footer .footer-info {
   background-color: var(--background);
   border-radius: 0.5rem;
   text-align: center;
+}
+
+footer .footer-info .github-link {
+  color: black;
+}
+
+footer .footer-info .github-link:hover {
+  color: #7e6332;
 }
 /*# sourceMappingURL=style.css.map */

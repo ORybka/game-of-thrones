@@ -82,6 +82,7 @@ const houses = [
 
 
 let button;
+let buttonLi;
 let icons;
 let image;
 let imageCollection = [];
@@ -98,15 +99,18 @@ const images = document.querySelector(".content-img-container");
 
 function createList() {
   houses.forEach(item => {
-    button = document.createElement('li');
-    button.className = ("menu-item");
+    buttonLi = document.createElement('li');
+    button = document.createElement('button');
+    button.className = (`menu-item ${item.name}`);
     button.innerHTML = `
     <img class="menu-item-img" src="/assets/shields/${item.name}.png"><span>House ${item.name}</span>`;
-    menu.appendChild(button);
+    buttonLi.appendChild(button);
+    menu.appendChild(buttonLi);
     button.addEventListener('click', () => {
       createElements(item);
       createImages(item);
       animation(item);
+      // setActiveBtn(item);
     })
   })
 }
@@ -117,6 +121,12 @@ function createElements(item) {
   slogan.innerText = `${item.slogan}`;
   description.innerHTML = `<span>${item.description}</span>`;
   background.style.backgroundColor = `var(--${item.name})`;
+}  
+
+function setActiveBtn(item) {
+  button.className = "active";
+  console.log(item.name);
+  // if(item.name = item);
 }
 
 function createImages(item) {
@@ -163,11 +173,7 @@ function imageHover(item) {
     el.addEventListener('click', function() {
       if (item.dead[i] === 1) {
         el.style.backgroundImage = "url(/assets/fire.gif)";
-        setTimeout (() => {
-          deadImage = document.createElement('div');
-          deadImage.className = ("dead");
-          el.appendChild(deadImage);
-        }, 1000);
+        showDead(el);
       } else {
         el.style.backgroundImage = "url(/assets/light.gif)";
       }
@@ -175,10 +181,17 @@ function imageHover(item) {
       setTimeout (() => {
         el.style.backgroundImage = `url("/assets/members/member-${item.name}-${i}.jpg")`;
       }, 1000);
-    });
+    }, {once : true});
   })
 }
 
+function showDead(el) {
+  setTimeout (() => {
+    deadImage = document.createElement('div');
+    deadImage.className = ("dead");
+    el.appendChild(deadImage);
+  }, 1000);
+}
 
 
 
