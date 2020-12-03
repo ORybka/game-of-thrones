@@ -95,7 +95,9 @@ const slogan = document.querySelector('.slogan');
 const description = document.querySelector('.description');
 const background = document.querySelector('.content-container');
 const menu = document.querySelector(".menu-container");
+const navbar = document.querySelector(".navbar");
 const images = document.querySelector(".content-img-container");
+const burgerIcon = document.querySelector(".burger-menu");
 
 function createList() {
   houses.forEach(item => {
@@ -164,8 +166,6 @@ function animation(item) {
   previousId = item.id;
 }
 
-
-
 function imageHover(item) {
   imageCollection.forEach((el, i) => {
     el.addEventListener('click', function() {
@@ -178,7 +178,7 @@ function imageHover(item) {
 
       setTimeout (() => {
         el.style.backgroundImage = `url("/assets/members/member-${item.name}-${i}.jpg")`;
-      }, 1000);
+      }, 1450);
     }, {once : true});
   })
 }
@@ -188,10 +188,13 @@ function showDead(el) {
     deadImage = document.createElement('div');
     deadImage.className = ("dead");
     el.appendChild(deadImage);
-  }, 1000);
+  }, 1450);
 }
 
-
+// burgerIcon.addEventListener("click", () => {
+//   navbar.classList.toggle("active");
+//   burgerIcon.classList.toggle("active");
+// });
 
 
 
