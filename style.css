@@ -202,7 +202,6 @@ body {
   -ms-grid-columns: 25% 75%;
       grid-template-columns: 25% 75%;
   border-radius: 0.5rem;
-  max-height: 70rem;
   padding: 0 1rem;
 }
 
