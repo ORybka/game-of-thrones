@@ -125,11 +125,6 @@ function createElements(item) {
   background.style.backgroundColor = `var(--${item.name})`;
 }  
 
-function setActiveBtn(item) {
-  button.className = "active";
-  console.log(item.name);
-}
-
 function createImages(item) {
   function imageCondition() {
     for (let i = 0; i < number; i++) {
