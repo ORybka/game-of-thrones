@@ -40,8 +40,8 @@ li {
 
 @font-face {
   font-family: "game_of_thronesregular";
-  src: url("./assets/fonts/game-of-thrones-webfont.woff2") format("woff2"),
-    url("./assets/fonts/game-of-thrones-webfont.woff") format("woff");
+  src: url("assets/fonts/game-of-thrones-webfont.woff2") format("woff2"),
+    url("assets/fonts/game-of-thrones-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -94,7 +94,7 @@ body {
   position: fixed;
   width: 150%;
   height: 500%;
-  background-image: url(/assets/westeros_map.jpg);
+  background-image: url(assets/westeros_map.jpg);
   background-size: cover;
   overflow: hidden;
 }
@@ -133,12 +133,12 @@ body {
     font-family: "game_of_thronesregular";
     font-size: 2rem;
     padding: 1rem;
+    margin: 1rem auto;
     color: var(--text);
+    background-color: var(--background);
     letter-spacing: 0.7rem;
     line-height: 2.5rem;
-    background-color: var(--background);
     border-radius: 0.8rem;
-    margin: 1rem auto;
   }
 
   .icon {

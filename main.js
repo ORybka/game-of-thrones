@@ -106,7 +106,7 @@ function createList() {
     button = document.createElement('button');
     button.className = (`menu-item`);
     button.innerHTML = `
-    <img class="menu-item-img" src="/assets/shields/${item.name}.png"><span>House ${item.name}</span>`;
+    <img class="menu-item-img" src="assets/shields/${item.name}.png"><span>House ${item.name}</span>`;
     buttonLi.appendChild(button);
     menu.appendChild(buttonLi);
     button.addEventListener('click', () => {
@@ -119,7 +119,7 @@ function createList() {
 
 function createElements(item) {
   house.innerText = `house ${item.name}`;
-  shield.setAttribute('src', `/assets/shields/${item.name}.png`);
+  shield.setAttribute('src', `assets/shields/${item.name}.png`);
   slogan.innerText = `${item.slogan}`;
   description.innerHTML = `<span>${item.description}</span>`;
   background.style.backgroundColor = `var(--${item.name})`;
@@ -136,7 +136,7 @@ function createImages(item) {
       image = document.createElement('div');
       image.className = ("content-img");
       images.appendChild(image);
-      image.style.backgroundImage = `url("/assets/members/member-${item.name}-${i}.jpg")`;
+      image.style.backgroundImage = `url("assets/members/member-${item.name}-${i}.jpg")`;
       imageCollection.push(image);
     }
   }
@@ -171,14 +171,14 @@ function imageHover(item) {
   imageCollection.forEach((el, i) => {
     el.addEventListener('click', function() {
       if (item.dead[i] === 1) {
-        el.style.backgroundImage = "url(/assets/fire.gif)";
+        el.style.backgroundImage = "url(assets/fire.gif)";
         showDead(el);
       } else {
-        el.style.backgroundImage = "url(/assets/light.gif)";
+        el.style.backgroundImage = "url(assets/light.gif)";
       }
 
       setTimeout (() => {
-        el.style.backgroundImage = `url("/assets/members/member-${item.name}-${i}.jpg")`;
+        el.style.backgroundImage = `url("assets/members/member-${item.name}-${i}.jpg")`;
       }, 1450);
     }, {once : true});
   })
