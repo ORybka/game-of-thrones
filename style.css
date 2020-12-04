@@ -202,9 +202,6 @@ body {
   -ms-grid-columns: 25% 75%;
       grid-template-columns: 25% 75%;
   border-radius: 0.5rem;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
   padding: 0 1rem;
 }
 
