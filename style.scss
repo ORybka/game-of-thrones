@@ -406,7 +406,7 @@ body {
 
 .content-img-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 0.5rem;
@@ -439,6 +439,11 @@ body {
   .content-info .house::after {
     width: 70%;
     margin: 1rem auto 0;
+  }
+
+  .content-img-container .content-img {
+    height: 5rem;
+    width: 5rem;
   }
 }
 

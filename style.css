@@ -126,7 +126,7 @@ body {
   position: fixed;
   width: 150%;
   height: 500%;
-  background-image: url(assets/westeros_map.jpg);
+  background-image: url("assets/westeros_map.jpg");
   background-size: cover;
   overflow: hidden;
 }
@@ -509,9 +509,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 0.5rem;
@@ -545,6 +544,10 @@ body {
   .content-info .house::after {
     width: 70%;
     margin: 1rem auto 0;
+  }
+  .content-img-container .content-img {
+    height: 5rem;
+    width: 5rem;
   }
 }
 
