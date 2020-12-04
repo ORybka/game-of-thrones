@@ -113,7 +113,7 @@ body {
 
 .container {
   position: absolute;
-  max-height: 55rem;
+  max-height: 120rem;
   width: 80%;
   max-width: 70rem;
   display: flex;
@@ -150,6 +150,7 @@ body {
   display: grid;
   grid-template-columns: 25% 75%;
   border-radius: 0.5rem;
+  height: fit-content;
   padding: 0 1rem;
 }
 

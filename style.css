@@ -145,7 +145,7 @@ body {
 
 .container {
   position: absolute;
-  max-height: 55rem;
+  max-height: 120rem;
   width: 80%;
   max-width: 70rem;
   display: -webkit-box;
@@ -202,6 +202,9 @@ body {
   -ms-grid-columns: 25% 75%;
       grid-template-columns: 25% 75%;
   border-radius: 0.5rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   padding: 0 1rem;
 }
 
