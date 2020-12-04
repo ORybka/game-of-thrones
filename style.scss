@@ -84,7 +84,7 @@ body {
   align-content: center;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   html {
     font-size: 12px;
   }
@@ -105,7 +105,7 @@ body {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .background-container .background-picture {
     background-size: 120% 100%;
   }
@@ -150,7 +150,7 @@ body {
   display: grid;
   grid-template-columns: 25% 75%;
   border-radius: 0.5rem;
-  height: fit-content;
+  max-height: 70rem;
   padding: 0 1rem;
 }
 
@@ -229,7 +229,7 @@ body {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .header-container {
     background-color: var(--background);
     border-radius: 0.5rem;
@@ -447,7 +447,7 @@ body {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .header-container {
     h1 {
       font-size: 1.5rem;
