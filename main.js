@@ -126,21 +126,11 @@ function createElements(item) {
 }  
 
 function createImages(item) {
-  function imageCondition() {
-    for (let i = 0; i < number; i++) {
-      image = document.createElement('div');
-      image.className = ("content-img");
-      images.appendChild(image);
-      image.style.backgroundImage = `url("assets/members/member-${item.name}-${i}.jpg")`;
-      imageCollection.push(image);
-    }
-  }
-
   if (images.children.length === 0) {
-    imageCondition()
+    newImage(item);
   } else {
     images.innerHTML = ""; 
-    imageCondition()
+    newImage(item);
   }
 
   if (imageCollection.length >= 3) {
@@ -148,6 +138,16 @@ function createImages(item) {
     imageCollection = [];
   } else {
     imageHover(item);
+  }
+}
+
+function newImage(item) {
+  for (let i = 0; i < number; i++) {
+    image = document.createElement('div');
+    image.className = ("content-img");
+    images.appendChild(image);
+    image.style.backgroundImage = `url("assets/members/member-${item.name}-${i}.jpg")`;
+    imageCollection.push(image);
   }
 }
 
@@ -192,7 +192,3 @@ hiddenIcon.addEventListener("click", () => {
   hiddenIcon.classList.toggle("active");
   header.classList.toggle("active")
 });
-
-
-
-
