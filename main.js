@@ -104,18 +104,27 @@ function createList() {
   houses.forEach(item => {
     buttonLi = document.createElement('li');
     button = document.createElement('button');
-    button.className = (`menu-item`);
+    button.className = ('menu-item');
+    button.id = item.id;
     button.innerHTML = `
-    <img class="menu-item-img" src="assets/shields/${item.name}.png"><span>House ${item.name}</span>`;
+    <img class="menu-item-img" src="assets/shields/${item.name}.png"><span>house ${item.name}</span>`;
     buttonLi.appendChild(button);
-    menu.appendChild(buttonLi);
-    button.addEventListener('click', () => {
-      createElements(item);
-      createImages(item);
-      animation(item);
-    })
+    menu.appendChild(buttonLi)
   })
 }
+
+function changeContent(e) {
+  let target = e.target;
+  if (!target.matches('button')) {
+    target = target.parentNode;
+  }
+  id = target.getAttribute("id");
+  createElements(houses[id]);
+  createImages(houses[id]);
+  animation(houses[id]);
+} 
+
+menu.addEventListener('click', changeContent);
 
 function createElements(item) {
   house.innerText = `house ${item.name}`;
