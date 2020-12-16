@@ -122,13 +122,25 @@ function createList() {
 
 function changeContent(e) {
   let target = e.target;
-  if (!target.matches('button')) {
+    if (!target.matches('button')) {
     target = target.parentNode;
   }
-  id = target.getAttribute('id');
-  createElements(houses[id]);
-  createImages(houses[id]);
-  animation(houses[id]);
+  const btn = target.closest('.menu-item')
+  if (btn) {
+    id = target.getAttribute('id');
+    createElements(houses[id]);
+    createImages(houses[id]);
+    animation(houses[id]);
+  }
+}
+
+function addAnimation(e) {
+  const target = e.target;
+  const img = target.closest('.content-img');
+  imageId = target.getAttribute('id');
+  if (img) {
+    changeBackground(target, imageId);
+  }
 }
 
 menu.addEventListener('click', changeContent);
