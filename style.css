@@ -40,7 +40,7 @@ li {
 }
 
 @font-face {
-  font-family: "game_of_thronesregular";
+  font-family: 'game_of_thronesregular';
   src: url("assets/fonts/game-of-thrones-webfont.woff2") format("woff2"), url("assets/fonts/game-of-thrones-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -101,7 +101,7 @@ li {
 }
 
 html {
-  font-family: "Gothic A1", sans-serif;
+  font-family: 'Gothic A1', sans-serif;
   font-size: 16px;
 }
 
@@ -181,7 +181,7 @@ body {
 }
 
 .header-container h1 {
-  font-family: "game_of_thronesregular";
+  font-family: 'game_of_thronesregular';
   font-size: 2rem;
   padding: 1rem;
   margin: 1rem auto;
@@ -398,7 +398,7 @@ body {
 }
 
 .content-info .house {
-  font-family: "game_of_thronesregular";
+  font-family: 'game_of_thronesregular';
   text-align: center;
   line-height: 2rem;
   margin-bottom: 1rem;
@@ -409,7 +409,7 @@ body {
 }
 
 .content-info .house::after {
-  content: "";
+  content: '';
   display: block;
   width: 120%;
   height: 0.2rem;
@@ -485,7 +485,7 @@ body {
 }
 
 .question::before {
-  content: "";
+  content: '';
   display: block;
   width: 105%;
   height: 0.2rem;
@@ -494,7 +494,7 @@ body {
 }
 
 .question::after {
-  content: "";
+  content: '';
   display: block;
   width: 105%;
   height: 0.2rem;
@@ -524,6 +524,14 @@ body {
   border-radius: 50%;
   background-size: cover;
   border: 0.1rem solid black;
+}
+
+.fire {
+  background-image: url(assets/fire.gif);
+}
+
+.light {
+  background-image: url(assets/light.gif);
 }
 
 .dead {
@@ -589,7 +597,7 @@ body {
 }
 
 footer {
-  font-family: "game_of_thronesregular";
+  font-family: 'game_of_thronesregular';
   font-weight: bold;
   display: -webkit-box;
   display: -ms-flexbox;
