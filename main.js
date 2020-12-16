@@ -1,9 +1,8 @@
-/* eslint-disable no-use-before-define */
 document.addEventListener('DOMContentLoaded', () => {
   createList();
   createElements(houses[0]);
-  createImages(houses[0]);
-  animation(houses[0]);
+  addImages(houses[0]);
+  animateMap(houses[0]);
 });
 
 const houses = [
@@ -122,24 +121,15 @@ function createList() {
 
 function changeContent(e) {
   let target = e.target;
-    if (!target.matches('button')) {
+  if (!target.matches('button')) {
     target = target.parentNode;
   }
-  const btn = target.closest('.menu-item')
+  const btn = target.closest('.menu-item');
   if (btn) {
     id = target.getAttribute('id');
     createElements(houses[id]);
-    createImages(houses[id]);
-    animation(houses[id]);
-  }
-}
-
-function addAnimation(e) {
-  const target = e.target;
-  const img = target.closest('.content-img');
-  imageId = target.getAttribute('id');
-  if (img) {
-    changeBackground(target, imageId);
+    addImages(houses[id]);
+    animateMap(houses[id]);
   }
 }
 
@@ -153,16 +143,16 @@ function createElements(item) {
   background.style.backgroundColor = `var(--${item.name})`;
 }
 
-function createImages(item) {
+function addImages(item) {
   if (images.children.length === 0) {
-    newImage(item);
+    createImage(item);
   } else {
     images.innerHTML = '';
-    newImage(item);
+    createImage(item);
   }
 }
 
-function newImage(item) {
+function createImage(item) {
   for (let i = 0; i < number; i++) {
     image = document.createElement('div');
     image.className = 'content-img';
@@ -176,7 +166,7 @@ function newImage(item) {
   }
 }
 
-function animation(item) {
+function animateMap(item) {
   document.querySelector('.background-picture').animate(
     [
       { transform: `${houses[previousId].mapPosition[0]}`, bottom: `${houses[previousId].mapPosition[1]}`, right: `${houses[previousId].mapPosition[2]}` },
@@ -190,7 +180,7 @@ function animation(item) {
   previousId = item.id;
 }
 
-function changeBackground(img, i) {
+function changeImageBackground(img, i) {
   if (!img.classList.contains('fire') && !img.classList.contains('light') && !img.classList.contains('dead')) {
     if (houses[id].dead[i] === 1) {
       img.style.backgroundImage = '';
@@ -215,16 +205,16 @@ function showDead(el) {
   }, time);
 }
 
-function addAnimation(e) {
+function addImageAnimation(e) {
   const target = e.target;
   const img = target.closest('.content-img');
   imageId = target.getAttribute('id');
   if (img) {
-    changeBackground(target, imageId);
+    changeImageBackground(target, imageId);
   }
 }
 
-images.addEventListener('click', addAnimation);
+images.addEventListener('click', addImageAnimation);
 
 hiddenIcon.addEventListener('click', () => {
   navbar.classList.toggle('active');
