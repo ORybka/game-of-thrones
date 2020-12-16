@@ -89,16 +89,15 @@ const houses = [
 let button;
 let buttonLi;
 let image;
-let id = 0;
 let imageId;
 let imageCollection = [];
 let previousId = 0;
 const number = 3;
 const time = 1450;
-const house = document.querySelector('.house');
-const shield = document.querySelector('.shield');
-const slogan = document.querySelector('.slogan');
-const description = document.querySelector('.description');
+const houseElement = document.querySelector('.house');
+const shieldElement = document.querySelector('.shield');
+const sloganElement = document.querySelector('.slogan');
+const descriptionElement = document.querySelector('.description');
 const background = document.querySelector('.content-container');
 const menu = document.querySelector('.menu-container');
 const navbar = document.querySelector('.navbar');
@@ -107,13 +106,13 @@ const hiddenIcon = document.querySelector('.icon');
 const header = document.querySelector('.header-container');
 
 function createList() {
-  houses.forEach((item) => {
+  houses.forEach(({ id, name }) => {
     buttonLi = document.createElement('li');
     button = document.createElement('button');
     button.className = 'menu-item';
-    button.id = item.id;
+    button.id = id;
     button.innerHTML = `
-    <img class="menu-item-img" src="assets/shields/${item.name}.png"><span>house ${item.name}</span>`;
+    <img class="menu-item-img" src="assets/shields/${name}.png"><span>house ${name}</span>`;
     buttonLi.appendChild(button);
     menu.appendChild(buttonLi);
   });
@@ -135,12 +134,12 @@ function changeContent(e) {
 
 menu.addEventListener('click', changeContent);
 
-function createElements(item) {
-  house.innerText = `house ${item.name}`;
-  shield.setAttribute('src', `assets/shields/${item.name}.png`);
-  slogan.innerText = `${item.slogan}`;
-  description.innerHTML = `<span>${item.description}</span>`;
-  background.style.backgroundColor = `var(--${item.name})`;
+function createElements({ name, slogan, description }) {
+  houseElement.innerText = `house ${name}`;
+  shieldElement.setAttribute('src', `assets/shields/${name}.png`);
+  sloganElement.innerText = `${slogan}`;
+  descriptionElement.innerHTML = `<span>${description}</span>`;
+  background.style.backgroundColor = `var(--${name})`;
 }
 
 function addImages(item) {
@@ -152,13 +151,13 @@ function addImages(item) {
   }
 }
 
-function createImage(item) {
+function createImage({ name }) {
   for (let i = 0; i < number; i++) {
     image = document.createElement('div');
     image.className = 'content-img';
     image.id = i;
     images.appendChild(image);
-    image.style.backgroundImage = `url("assets/members/member-${item.name}-${i}.jpg")`;
+    image.style.backgroundImage = `url("assets/members/member-${name}-${i}.jpg")`;
     if (imageCollection.length >= 3) {
       imageCollection = [];
     }
