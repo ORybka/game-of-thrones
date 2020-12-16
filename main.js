@@ -89,12 +89,13 @@ const houses = [
 
 let button;
 let buttonLi;
-let icons;
 let image;
+let id = 0;
+let imageId;
 let imageCollection = [];
 let previousId = 0;
 const number = 3;
-const content = document.querySelector('.content');
+const time = 1450;
 const house = document.querySelector('.house');
 const shield = document.querySelector('.shield');
 const slogan = document.querySelector('.slogan');
@@ -147,21 +148,18 @@ function createImages(item) {
     images.innerHTML = '';
     newImage(item);
   }
-
-  if (imageCollection.length >= 3) {
-    imageHover(item);
-    imageCollection = [];
-  } else {
-    imageHover(item);
-  }
 }
 
 function newImage(item) {
   for (let i = 0; i < number; i++) {
     image = document.createElement('div');
     image.className = 'content-img';
+    image.id = i;
     images.appendChild(image);
     image.style.backgroundImage = `url("assets/members/member-${item.name}-${i}.jpg")`;
+    if (imageCollection.length >= 3) {
+      imageCollection = [];
+    }
     imageCollection.push(image);
   }
 }
@@ -180,36 +178,40 @@ function animation(item) {
   previousId = item.id;
 }
 
-function imageHover(item) {
-  imageCollection.forEach((el, i) => {
-    el.addEventListener(
-      'click',
-      function () {
-        if (item.dead[i] === 1) {
-          el.style.backgroundImage = '';
-          el.classList.add('fire');
-          showDead(el);
-        } else {
-          el.style.backgroundImage = '';
-          el.classList.add('light');
-        }
+function changeBackground(img, i) {
+  if (houses[id].dead[i] === 1) {
+    img.style.backgroundImage = '';
+    img.classList.add('fire');
+    showDead(img);
+  } else {
+    img.style.backgroundImage = '';
+    img.classList.add('light');
+  }
 
-        setTimeout(() => {
-          el.style.backgroundImage = `url("assets/members/member-${item.name}-${i}.jpg")`;
-        }, 1450);
-      },
-      { once: true }
-    );
-  });
+  setTimeout(() => {
+    img.style.backgroundImage = `url("assets/members/member-${houses[id].name}-${i}.jpg")`;
+    img.classList.add('done');
+  }, time);
 }
 
 function showDead(el) {
   setTimeout(() => {
-    deadImage = document.createElement('div');
+    const deadImage = document.createElement('div');
     deadImage.className = 'dead';
     el.appendChild(deadImage);
-  }, 1450);
+  }, time);
 }
+
+function addAnimation(e) {
+  const target = e.target;
+  const img = target.closest('.content-img');
+  imageId = target.getAttribute('id');
+  if (img) {
+    changeBackground(target, imageId);
+  }
+}
+
+images.addEventListener('click', addAnimation);
 
 hiddenIcon.addEventListener('click', () => {
   navbar.classList.toggle('active');
