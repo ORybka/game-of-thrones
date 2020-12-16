@@ -179,19 +179,20 @@ function animation(item) {
 }
 
 function changeBackground(img, i) {
-  if (houses[id].dead[i] === 1) {
-    img.style.backgroundImage = '';
-    img.classList.add('fire');
-    showDead(img);
-  } else {
-    img.style.backgroundImage = '';
-    img.classList.add('light');
-  }
+  if (!img.classList.contains('fire') && !img.classList.contains('light') && !img.classList.contains('dead')) {
+    if (houses[id].dead[i] === 1) {
+      img.style.backgroundImage = '';
+      img.classList.add('fire');
+      showDead(img);
+    } else {
+      img.style.backgroundImage = '';
+      img.classList.add('light');
+    }
 
-  setTimeout(() => {
-    img.style.backgroundImage = `url("assets/members/member-${houses[id].name}-${i}.jpg")`;
-    img.classList.add('done');
-  }, time);
+    setTimeout(() => {
+      img.style.backgroundImage = `url("assets/members/member-${houses[id].name}-${i}.jpg")`;
+    }, time);
+  }
 }
 
 function showDead(el) {
