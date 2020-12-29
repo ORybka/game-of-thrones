@@ -86,6 +86,7 @@ const houses = [
   },
 ];
 
+let id = 0;
 let previousId = 0;
 const number = 3;
 const time = 1450;
@@ -114,12 +115,9 @@ function createList() {
 }
 
 function changeContent({ target }) {
-  if (!target.matches('button')) {
-    target = target.parentNode;
-  }
   const btn = target.closest('.menu-item');
   if (btn) {
-    id = target.getAttribute('id');
+    id = btn.getAttribute('id');
     createElements(houses[id]);
     addImages(houses[id]);
     animateMap(houses[id]);
