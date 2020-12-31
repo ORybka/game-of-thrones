@@ -88,8 +88,8 @@ const houses = [
 
 let id = 0;
 let previousId = 0;
-const number = 3;
-const time = 1450;
+const MEMBER_NUMBER = 3;
+const ANIMATION_DURATION = 1450;
 const houseElement = document.querySelector('.house');
 const shieldElement = document.querySelector('.shield');
 const sloganElement = document.querySelector('.slogan');
@@ -147,7 +147,7 @@ function addImages(item) {
 
 function createImage({ name }) {
   const imagesFragment = document.createDocumentFragment();
-  for (let i = 0; i < number; i++) {
+  for (let i = 0; i < MEMBER_NUMBER; i++) {
     const image = document.createElement('div');
     image.className = 'content-img';
     image.id = i;
@@ -184,7 +184,7 @@ function changeImageBackground(img, i) {
 
     setTimeout(() => {
       img.style.backgroundImage = `url("assets/members/member-${houses[id].name}-${i}.jpg")`;
-    }, time);
+    }, ANIMATION_DURATION);
   }
 }
 
@@ -193,7 +193,7 @@ function showDead(el) {
     const deadImage = document.createElement('div');
     deadImage.className = 'dead';
     el.appendChild(deadImage);
-  }, time);
+  }, ANIMATION_DURATION);
 }
 
 function addImageAnimation({ target }) {
